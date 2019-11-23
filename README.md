@@ -1,9 +1,8 @@
-# Minimalist Webpack Boilerplate
+# Movie finder
 
 ## Instructions
 
-* Clone repo - `git clone https://github.com/jpggvilaca/webpack-boilerplate.git`
-* Change to the cloned repo's folder - `cd webpack-boilerplate`
+* Clone repo - `git clone https://github.com/Mar1aPe/Movie-finder.git`
 * Install dependencies - `npm install`
 * Start the server - `npm start`
 * Navigate to `localhost:3500` in the browser
