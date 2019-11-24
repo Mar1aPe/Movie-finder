@@ -3,6 +3,9 @@ export const getActors = (film) => {
     // <div> with actors in it in 'Starring' section
     const cast = document.querySelector('.cast')
 
+    // clear cast from prevoius search
+    cast.innerHTML = ''
+
     //array of actors from API
     const actors = film.Actors.split(',')
 

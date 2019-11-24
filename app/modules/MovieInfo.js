@@ -10,6 +10,8 @@ export const movieInfo = (film) => {
     const imdb = document.querySelector('.imdb')
 
 
+    // -------------inserting movie data to DOM elements------------
+
     title.innerText = film.Title
     photo.src = film.Poster
     plot.innerText = film.Plot
