@@ -1,15 +1,14 @@
 import './styles/index.scss';
 import { getActors } from './modules/Actors';
 import { getDirectors } from './modules/Directors';
+import { movieInfo } from './modules/MovieInfo'
 
-//--------------- DOM elements----------------------------------
 
-const h2 = document.getElementsByTagName('h2')[0]
-const photo = document.querySelectorAll('img')[0]
-const plot = document.getElementsByClassName('plot')[0]
-//const director = document.querySelector('.director')
+const input = document.querySelector('input')
+console.log(input)
 
-const movie = 'titanic'
+
+const movie = 'dracula'
 
 // -------------Getting movie data from API --------------------
 
@@ -25,10 +24,9 @@ getFilm(movie)
         console.log(film)
         getActors(film)
         getDirectors(film)
+        movieInfo(film)
 
-        h2.innerText = film.Title
-        photo.src = film.Poster
-        plot.innerText = film.Plot
+
 
     })
 

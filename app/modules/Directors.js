@@ -3,7 +3,7 @@ export const getDirectors = (film) => {
     // <div> with directors in it in 'Director' section
     const director = document.querySelector('.director')
 
-    //array of directors
+    //array of directors from API
     const directors = film.Director.split(',')
 
     //appending diectors to 'Director' section
@@ -13,6 +13,7 @@ export const getDirectors = (film) => {
         const movieMaker = document.createElement('p')
         movieMaker.innerText = dir
         director.appendChild(movieMaker)
+
         return director
     })
 }
