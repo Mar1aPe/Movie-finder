@@ -1,32 +1,45 @@
+import "@babel/polyfill";
 import './styles/index.scss';
 import { getActors } from './modules/Actors';
 import { getDirectors } from './modules/Directors';
 import { movieInfo } from './modules/MovieInfo'
 
 
-const input = document.querySelector('input')
-console.log(input)
+//------------"Search Movie" button-------------------------
+
+const button = document.querySelector('button')
+
+// ---------getting Movie Title from user's input------------
+
+const titleToSearch = () => {
+    const input = document.querySelector('input')
+    return input.value
+}
 
 
-const movie = 'dracula'
-
-// -------------Getting movie data from API --------------------
+//------------fetch movie by title from user's input--------
 
 const getFilm = (movie) => {
     return fetch(`http://www.omdbapi.com/?apikey=265f0738&t=${movie}`)
         .then(response => response.json())
 }
 
+//------------appending movie details to body----------------
 
+const insertMovieData = (film) => {
+    getActors(film)
+    getDirectors(film)
+    movieInfo(film)
+}
 
-getFilm(movie)
-    .then(film => {
-        console.log(film)
-        getActors(film)
-        getDirectors(film)
-        movieInfo(film)
+//fuction for eventListener on button 'click' using above functions
 
+const retrieveData = async () => {
+    const movie = await titleToSearch()
+    const film = await getFilm(movie)
+    return insertMovieData(film)
 
+}
 
-    })
+button.addEventListener('click', retrieveData)
 
