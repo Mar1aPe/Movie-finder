@@ -1,15 +1,35 @@
 import './styles/index.scss';
 
 
-let dhfg = []
-
-const getMovie = (movie) => {
-
+const getFilm = (movie) => {
     return fetch(`http://www.omdbapi.com/?apikey=265f0738&t=${movie}`)
         .then(response => response.json())
-        .then(data => console.log(data.Title))
 }
 
+//--------------- DOM elements----------------------------------
+
+const h2 = document.getElementsByTagName('h2')[0]
+const photo = document.querySelectorAll('img')[0]
+const plot = document.getElementsByClassName('plot')[0]
+const cast = document.querySelector('.cast')
 
 
-getMovie('home alone');
+getFilm('titanic')
+    .then(film => {
+        console.log(film)
+
+        h2.innerText = film.Title
+        photo.src = film.Poster
+        plot.innerText = film.Plot
+        const actors = film.Actors.split(',') //array of actors
+
+
+
+        actors.forEach(actor => {
+            const star = document.createElement('p')
+            star.innerText = actor
+            cast.appendChild(star)
+            return cast
+        })
+
+    })
