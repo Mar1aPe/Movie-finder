@@ -8,6 +8,8 @@ export const movieInfo = (film) => {
     const year = document.querySelector('.year')
     const rungen = document.querySelector('.rungen')
     const imdb = document.querySelector('.imdb')
+    const rateStar = document.querySelector('.fas')
+
 
 
     // -------------inserting movie data to DOM elements------------
@@ -18,6 +20,7 @@ export const movieInfo = (film) => {
     year.innerText = film.Year
     rungen.innerText = `(${film.Runtime}) ${film.Genre}`
     imdb.innerText = film.imdbRating
+    rateStar.style.visibility = 'visible';
 
 
 }

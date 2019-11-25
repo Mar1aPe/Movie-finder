@@ -1,8 +1,47 @@
+@import 'variables';
+@import 'search';
+@import 'cast';
+@import 'director';
+@import 'info';
 
+
+
+
+//-------------------------------reset----------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: sans-serif;
-  // background-image: url("./images/bgimg.jpg");
-  //background-color: yellow;
-  //background: url('../images/bgimg.jpg') no-repeat;
+  color: white;
+  background-image: url("https://totalnutritiontech.com/wp-content/uploads/2018/02/Depositphotos_22823894_xl-2015-1000x651.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+  //--------------------Poster--------------------------------
+
+  img {
+    margin: auto;
+
+    @media screen and (max-width: $mobile) {
+      width: 250px;
+      min-height: 100%;
+    }
+  }
+
+  //--------------------Movie Title----------------------------
+
+  h2 {
+    color: $themeColor;
+    margin: auto;
+
+    font: {
+      family: $movieFont;
+      size: 50px;
+    }
+  }
 }

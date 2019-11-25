@@ -8,11 +8,11 @@ import { movieInfo } from './modules/MovieInfo'
 //------------"Search Movie" button-------------------------
 
 const button = document.querySelector('button')
+const input = document.querySelector('input')
 
 // ---------getting Movie Title from user's input------------
 
 const titleToSearch = () => {
-    const input = document.querySelector('input')
     return input.value
 }
 
@@ -37,7 +37,10 @@ const insertMovieData = (film) => {
 const retrieveData = async () => {
     const movie = await titleToSearch()
     const film = await getFilm(movie)
-    return insertMovieData(film)
+    insertMovieData(film)
+    input.value = ''
+    rateStar.style.display = 'visible'
+
 
 }
 

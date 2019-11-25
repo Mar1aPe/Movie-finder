@@ -1,0 +1,11 @@
+.info {
+    width: 90%;
+    margin: 20px auto;
+    color: rgb(168, 168, 164);
+    text-align: center;
+
+    .fas {
+        color: $namesColor;
+        visibility: hidden;
+    }
+}
