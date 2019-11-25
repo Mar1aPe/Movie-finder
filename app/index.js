@@ -10,7 +10,8 @@ import { movieInfo } from './modules/MovieInfo'
 const button = document.querySelector('button')
 const input = document.querySelector('input')
 const title = document.getElementsByTagName('h2')[0]
-
+const loader = document.querySelector('.loader')
+console.log(loader)
 // ---------getting Movie Title from user's input------------
 
 const titleToSearch = () => {
@@ -29,26 +30,40 @@ const getFilm = (movie) => {
 
 const insertMovieData = (film) => {
 
-    if (film.Response !== 'False') {
-        getActors(film)
-        getDirectors(film)
-        movieInfo(film)
-        input.value = ''
-        rateStar.style.display = 'visible'
-    } else {
-        title.innerText = 'Sorry, try another movie'
-    }
+    loader.style.display = 'flex'
+
+    setTimeout(function () {
+        loader.style.display = 'none'
+        if (film.Response !== 'False') {
+            getActors(film)
+            getDirectors(film)
+            movieInfo(film)
+            input.value = ''
+            rateStar.style.display = 'visible'
+        } else {
+            title.innerText = 'Sorry, try another movie'
+        }
+    }, 2000)
+
 }
 
 //fuction for eventListener on button 'click' using above functions
 
 const retrieveData = async () => {
-    const movie = await titleToSearch()
+    const movie = titleToSearch()
     const film = await getFilm(movie)
     insertMovieData(film)
     input.value = ''
 
 }
 
+// serach movie on button click
 button.addEventListener('click', retrieveData)
 
+// serach movie on "enter" key
+input.addEventListener('keyup', function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        retrieveData()
+    }
+})

@@ -9,8 +9,16 @@
     padding-bottom: 15px;
 
     input {
-        color: grey;
+        color: white;
+        font-size: 14px;
         background-color: rgba(31, 30, 30, 0.5);
+
+        &::placeholder {
+            color: white;
+            opacity: 1;
+        }
+
+
     }
 
     button {
