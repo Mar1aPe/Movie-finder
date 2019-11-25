@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const env = process.env.NODE_ENV;
+const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 module.exports = {
   entry: './app/index.js',
@@ -13,7 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/'
+    publicPath: ASSET_PATH
   },
 
   devServer: {
@@ -31,9 +32,9 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-               test: /\.(png|svg|jpg|gif)$/,
-                use: 'file-loader'
-               },
+        test: /\.(png|svg|jpg|gif)$/,
+        use: 'file-loader'
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [

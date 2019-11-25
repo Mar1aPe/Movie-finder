@@ -1,11 +1,14 @@
 {
+  "homepage": "https://mar1ape.github.io/Movie-finder/",
   "name": "movie-finder",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --colors",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "deploy": "gh-pages -d build"
+
   },
   "keywords": [
     "webpack",
@@ -29,6 +32,7 @@
     "css-hot-loader": "^1.4.4",
     "css-loader": "^3.2.0",
     "file-loader": "^4.3.0",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",

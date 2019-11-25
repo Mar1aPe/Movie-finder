@@ -9,6 +9,7 @@ import { movieInfo } from './modules/MovieInfo'
 
 const button = document.querySelector('button')
 const input = document.querySelector('input')
+const title = document.getElementsByTagName('h2')[0]
 
 // ---------getting Movie Title from user's input------------
 
@@ -27,9 +28,16 @@ const getFilm = (movie) => {
 //------------appending movie details to body----------------
 
 const insertMovieData = (film) => {
-    getActors(film)
-    getDirectors(film)
-    movieInfo(film)
+
+    if (film.Response !== 'False') {
+        getActors(film)
+        getDirectors(film)
+        movieInfo(film)
+        input.value = ''
+        rateStar.style.display = 'visible'
+    } else {
+        title.innerText = 'Sorry, try another movie'
+    }
 }
 
 //fuction for eventListener on button 'click' using above functions
@@ -39,8 +47,6 @@ const retrieveData = async () => {
     const film = await getFilm(movie)
     insertMovieData(film)
     input.value = ''
-    rateStar.style.display = 'visible'
-
 
 }
 
