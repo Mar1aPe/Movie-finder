@@ -1,17 +1,15 @@
 import "@babel/polyfill";
 import './styles/index.scss';
-import { getActors } from './modules/Actors';
-import { getDirectors } from './modules/Directors';
-import { movieInfo } from './modules/MovieInfo'
+import { movieInfo, movieNotFound, getDirectors, getActors } from './modules/MovieInfo'
 
 
-//------------"Search Movie" button-------------------------
+
 
 const button = document.querySelector('button')
 const input = document.querySelector('input')
-const title = document.getElementsByTagName('h2')[0]
 const loader = document.querySelector('.loader')
-console.log(loader)
+const rateStar = document.querySelector('.fas')
+
 // ---------getting Movie Title from user's input------------
 
 const titleToSearch = () => {
@@ -29,9 +27,7 @@ const getFilm = (movie) => {
 //------------appending movie details to body----------------
 
 const insertMovieData = (film) => {
-
     loader.style.display = 'flex'
-
     setTimeout(function () {
         loader.style.display = 'none'
         if (film.Response !== 'False') {
@@ -41,7 +37,7 @@ const insertMovieData = (film) => {
             input.value = ''
             rateStar.style.display = 'visible'
         } else {
-            title.innerText = 'Sorry, try another movie'
+            movieNotFound()
         }
     }, 2000)
 
@@ -52,6 +48,7 @@ const insertMovieData = (film) => {
 const retrieveData = async () => {
     const movie = titleToSearch()
     const film = await getFilm(movie)
+    console.log(film)
     insertMovieData(film)
     input.value = ''
 
