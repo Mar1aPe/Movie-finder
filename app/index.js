@@ -34,7 +34,6 @@ const insertMovieData = (film) => {
             getActors(film)
             getDirectors(film)
             movieInfo(film)
-            input.value = ''
             rateStar.style.display = 'visible'
         } else {
             movieNotFound()
