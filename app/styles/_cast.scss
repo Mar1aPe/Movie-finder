@@ -2,8 +2,10 @@
     margin: 20px;
     text-align: center;
 
-    p {
-        display: inline;
+    li {
+        display: inline-flex;
         color: $namesColor;
+        margin-right: 10px;
+        ;
     }
 }

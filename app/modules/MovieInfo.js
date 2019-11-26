@@ -30,21 +30,24 @@ export const getDirectors = (film) => {
         const movieMaker = document.createElement('p')
         movieMaker.innerText = dir
         director.appendChild(movieMaker)
+        director.style.visibility = 'visible'
         return director
     })
 }
 
 export const getActors = (film) => {
-    cast.innerHTML = '' // clear cast from prevoius search
+    cast.innerHTML = '<ul></ul>' // clear cast from prevoius search
     const actors = film.Actors.split(',')   //array of actors from API
     //appending actors to 'Starring' section
     actors.forEach(actor => {
-        const star = document.createElement('p')
+        const star = document.createElement('li')
         star.innerText = actor
         cast.appendChild(star)
+        cast.style.visibility = 'visible'
         return cast
     })
 }
+
 
 
 export const movieNotFound = (film) => {
@@ -54,7 +57,7 @@ export const movieNotFound = (film) => {
     year.innerText = ''
     rungen.innerText = ''
     imdb.innerText = ''
-    rateStar.style.display = 'none'
-    director.style.display = 'none'
-    cast.style.display = 'none'
+    rateStar.style.visibility = 'hidden'
+    director.style.visibility = 'hidden'
+    cast.style.visibility = 'hidden'
 }
