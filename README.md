@@ -1,5 +1,20 @@
 # Movie finder
 
+Website live preview on [this GitHub Page](Website live preview on [this GitHub Page](https://mar1ape.github.io/Business-Landing-Page/)
+
+
+![Page preview](./images/movieView.JPG)
+
+On this site upon user's input movie data is displayed
+
+# Application was build with:
+
+* Webpack
+* Sass
+* API
+* JavaScript
+* async/await
+
 ## Instructions
 
 * Clone repo - `git clone https://github.com/Mar1aPe/Movie-finder.git`
