@@ -3,7 +3,7 @@
 Website live preview on [this GitHub Page](Website live preview on [this GitHub Page](https://mar1ape.github.io/Business-Landing-Page/)
 
 
-![Page preview](./images/movieView.JPG)
+![Page preview](./app/images/movieView.JPG)
 
 On this site upon user's input movie data is displayed
 
