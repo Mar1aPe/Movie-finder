@@ -20,7 +20,7 @@ const titleToSearch = () => {
 //------------fetch movie by title from user's input--------
 
 const getFilm = (movie) => {
-    return fetch(`http://www.omdbapi.com/?apikey=265f0738&t=${movie}`)
+    return fetch(`https://www.omdbapi.com/?apikey=265f0738&t=${movie}`)
         .then(response => response.json())
 }
 
