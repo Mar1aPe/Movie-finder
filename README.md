@@ -1,6 +1,6 @@
 # Movie finder
 
-Website live preview on [this GitHub Page](Website live preview on [this GitHub Page](https://mar1ape.github.io/Business-Landing-Page/)
+Website live preview on [this GitHub Page](https://mar1ape.github.io/Movie-finder/)
 
 
 ![Page preview](./app/images/movieView.JPG)
